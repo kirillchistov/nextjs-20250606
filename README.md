@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) learning project.
 
 ### ДЗ - 1
 
-[+] Create a public [GitHub] ([если нет аккаунта](https://github.com/)) repo for the project 
+[+] Create a public [GitHub] (https://github.com/)) project repo 
 [+] Create hw-1 branch
 [+] Create README.md 
 [+] Create pull request and post the link to the class group
