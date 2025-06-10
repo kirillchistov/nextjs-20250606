@@ -3,7 +3,7 @@ Advance with NextJS
 
 This is a [Next.js](https://nextjs.org/) learning project. 
 
-### ДЗ - 1
+### HW - 1
 
 [+] Create a public [GitHub] (https://github.com/)) project repo 
 [+] Create hw-1 branch
