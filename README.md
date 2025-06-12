@@ -1,21 +1,33 @@
 # nextjs-20250606
-Advance with NextJS
 
 This is a [Next.js](https://nextjs.org/) learning project. 
 
 ### HW - 1
 
-[+] Create a public [GitHub] (https://github.com/)) project repo 
-[+] Create hw-1 branch
-[+] Create README.md 
-[+] Create pull request and post the link to the class group
+* [x] Create a public [GitHub] (https://github.com/)) project repo 
+* [x] Create hw-1 branch
+* [x] Create README.md 
+* [x] Create pull request and post the link to the class group
+
+### HW - 2
+
+* [x] Bootstrap the app with npx create-next-app@latest
+* [x] Remove unnecesary files
+* [x] Build pages based on the Figma layout and mock data:
+home (/), product list (/rackets), product page (/racket/[racketId])
+* [x] Create header for every page with links to home and product list, the active link should be highlighted 
+в шапке находятся ссылки: главная и ракетки (активная ссылка выделяется). 
+* [x] Create footer for every page with site info
+* [x] Use generateStaticParams to pre-generate pages for any 3 products of choice
+* [x] Enable images by launching the server [repo to clone] (https://github.com/zubkov7/next-webinar-server).
 
 
 ## Getting Started
 
 Pre-requisites:
-[+] Install IDE [VS Code] (https://code.visualstudio.com/). [+] Install [node.js] (https://nodejs.org/en)
-[+] Refresh on [Git course] (https://www.youtube.com/playlist?list=PLDyvV36pndZEgSRzWGuXFrTRUFuAAMciE)
+* [x] Install IDE [VS Code] (https://code.visualstudio.com/)
+* [x] Install [node.js] (https://nodejs.org/en)
+* [x] Refresh on [Git course] (https://www.youtube.com/playlist?list=PLDyvV36pndZEgSRzWGuXFrTRUFuAAMciE)
 
 Bootstrap NextJS app
 Easiest way is with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
