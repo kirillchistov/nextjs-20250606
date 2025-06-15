@@ -4,14 +4,7 @@ import rackets from '../../app/data/mock'
 import styles from './products.module.css';
 // import { Racket } from '../../types';
 
-// const products: Product[] = [
-//   { id: 1, name: 'Classic T-Shirt', price: 29.99 },
-//   { id: 2, name: 'Premium Jacket', price: 89.99 },
-//   { id: 3, name: 'Slim Fit Jeans', price: 59.99 },
-//   { id: 4, name: 'Sport Shorts', price: 39.99 },
-//   { id: 5, name: 'Cotton Hoodie', price: 49.99 },
-//   { id: 6, name: 'Running Shoes', price: 79.99 },
-// ];
+
 
 export default function ProductGrid() {
   return (
