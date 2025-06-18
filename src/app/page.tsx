@@ -1,17 +1,21 @@
-import Header from '../components/Header/header';
 // import Hero from '../components/Hero/hero';
 import ProductGrid from '../components/ProductGrid/products';
-import Footer from '../components/Footer/footer';
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         {/* <Hero /> */}
         <ProductGrid />
       </main>
-      <Footer />
     </>
   );
+}
+
+export async function generateStaticParams() {
+    return [
+        { racket_id: "2", },
+        { racket_id: "4", },
+        { racket_id: "6", },
+    ];
 }

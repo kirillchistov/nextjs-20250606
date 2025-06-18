@@ -1,19 +1,5 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-  type: string;
-  model: string;
-  year: number;
-  top10: boolean;
-  description: string;
-  brandId: number;
-  brand: Brand;
-}
-
 export interface Racket {
-  id: number;
+  id: string | number;
   name: string;
   price: number;
   brandId: number;
@@ -30,3 +16,12 @@ export interface Brand {
   id: number;
   name: string;
 }
+
+export type racketResponse = {
+    product: Racket
+}
+
+export type racketProps = {
+  params: Promise<{ racketId: string }>;
+  searchParams: Promise<Record<string, string>>;
+};

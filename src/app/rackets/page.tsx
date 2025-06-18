@@ -1,7 +1,15 @@
-export default function ProductPage() {
+// import Header from '../../components/Header/header';
+import RacketGrid from '../../components/RacketGrid/rackets';
+// import Footer from '../../components/Footer/footer';
+
+export default function RacketsPage() {
   return (
-    <div>
-      <div>Root products page</div>
-    </div>
+    <>
+      {/* <Header /> */}
+      <main>
+        <RacketGrid />
+      </main>
+      {/* <Footer /> */}
+    </>
   );
 }

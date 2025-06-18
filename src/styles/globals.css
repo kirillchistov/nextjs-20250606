@@ -39,3 +39,21 @@ button {
 main {
   flex: 1;
 }
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+/* Product detail page styles */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,6 @@
-export const rackets = [
+import { Racket } from '../../types';
+
+export const initialRackets: Racket[] = [
     {
       "id": 1,
       "name": "Wilson Pro Staff 97 v14",
@@ -449,4 +451,8 @@ export const rackets = [
     }
   ];
 
-  export default rackets;
+export const brands = Array.from(
+  new Map(initialRackets.map(r => [r.brand.id, r.brand])).values()
+);
+
+export default initialRackets

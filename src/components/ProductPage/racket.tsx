@@ -1,13 +1,13 @@
 import { Racket } from '../../types';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './product.module.css';
+import styles from './racket.module.css';
 
 interface ProductCardProps {
   racket: Racket;
 }
 
-export default function ProductCard({ racket }: ProductCardProps) {
+export default function ProductPage({ racket }: ProductCardProps) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -23,7 +23,6 @@ export default function ProductCard({ racket }: ProductCardProps) {
         </div>
       </div>
       <div className={styles.info}>
-        <div className={styles.brand}>{racket.brand.name}</div>
         <h3 className={styles.name}>
           <Link href={`/racket/${racket.id}`} passHref>
             {racket.name}
