@@ -6,6 +6,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './style.module.css';
 
+// export async function generateStaticParams() {
+//     return [
+//         { racket_id: "2", },
+//         { racket_id: "4", },
+//         { racket_id: "6", },
+//     ];
+// }
+
 export default function RacketPage() {
   const params = useParams();
   const racketId = parseInt(params.racketId as string);
