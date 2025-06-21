@@ -15,7 +15,7 @@ export default function BrandFilter({
   return (
     <div className={styles.filterContainer}>
       <div className={styles.filterHeader}>
-        <h3 className={styles.filterTitle}>Filters</h3>
+        <h3 className={styles.filterTitle}>Filter by</h3>
       </div>
       
       <div className={styles.filterGroup}>

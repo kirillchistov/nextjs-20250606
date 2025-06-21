@@ -10,9 +10,10 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* 1:1 Aspect Ratio */
 .imageContainer {
   position: relative;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
+  padding-top: 100%; 
   background: #f8f8f8;
 }
 

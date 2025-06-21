@@ -2,8 +2,6 @@ import Link from 'next/link';
 import ProductCard from '../ProductCard/product';
 import rackets from '../../app/data/mock'
 import styles from './products.module.css';
-// import { Racket } from '../../types';
-
 
 
 export default function ProductGrid() {

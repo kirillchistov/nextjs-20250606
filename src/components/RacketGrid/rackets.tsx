@@ -5,12 +5,12 @@ import ProductCard from '../ProductCard/product';
 import BrandFilter from '../BrandFilter/filter';
 import styles from '../ProductGrid/products.module.css';
 import { initialRackets, brands } from '../../app/data/mock';
-import { Racket } from '@/types';
+import { IRacket } from '@/types';
 
 export default function RacketGrid() {
   const [selectedBrands, setSelectedBrands] = useState<number[]>([]);
   
-  const filteredRackets: Racket[] = selectedBrands.length === 0
+  const filteredRackets: IRacket[] = selectedBrands.length === 0
     ? initialRackets
     : initialRackets.filter(r => selectedBrands.includes(r.brand.id));
 
