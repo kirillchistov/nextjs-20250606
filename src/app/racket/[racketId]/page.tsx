@@ -1,33 +1,29 @@
-"use client"
 
-import { useParams } from 'next/navigation';
 import { initialRackets } from '../../data/mock';
 import Image from 'next/image';
 import Link from 'next/link';
+import NotFound from './not-found';
 import styles from './style.module.css';
 
-// export async function generateStaticParams() {
-//     return [
-//         { racket_id: "2", },
-//         { racket_id: "4", },
-//         { racket_id: "6", },
-//     ];
-// }
+type racketProps = {
+  params: Promise<{ racketId: string }>;
+  searchParams: Promise<Record<string, string>>;
+};
 
-export default function RacketPage() {
-  const params = useParams();
-  const racketId = parseInt(params.racketId as string);
-  const racket = initialRackets.find(r => r.id === racketId);
-  console.log(racket);
+export const generateStaticParams = () => {
+  const idsToGenerate = initialRackets.slice(2, 6);
 
-  if (!racket) {
-    return (
-      <div className={styles.notFound}>
-        <h2>Racket not found</h2>
-        <Link href="/">Back home</Link>
-      </div>
-    );
-  }
+  return idsToGenerate.map((racket) => ({
+    racketId: racket.id.toString(),
+  }));
+};
+
+export default async function RacketPage({ params }: racketProps) {
+  const { racketId } = await params;
+
+  const racket = initialRackets.find(r => r.id === Number(racketId));
+
+  if (!racket) return <NotFound /> 
 
   return (
     <div className={styles.container}>
@@ -42,9 +38,7 @@ export default function RacketPage() {
           </div>
           
           <h1 className={styles.racketName}>{racket.name}</h1>
-                    
           <p className={styles.description}>{racket.description}</p>
-          
           <div className={styles.specs}>
             <div className={styles.specRow}>
               <span className={styles.specLabel}>Type:</span>
@@ -59,21 +53,12 @@ export default function RacketPage() {
               <span className={styles.specValue}>{racket.year}</span>
             </div>
           </div>
-          
-          {/* <div className={styles.addToCart}>
-            <div className={styles.quantitySelector}>
-              <button className={styles.quantityButton}>-</button>
-              <span className={styles.quantity}>1</span>
-              <button className={styles.quantityButton}>+</button>
-            </div>
-            <button className={styles.addButton}>Add to Cart</button>
-          </div> */}
         </div>
 
         <div className={styles.racketImages}>
           <div className={styles.mainImage}>
             <div className={styles.placeholder}>
-              <Link href={`/racket/${racket.id}`} passHref>
+              <Link href={`/racket/${racket.id}`} >
                 <Image
                     src={racket.imageUrl}
                     width={450}
@@ -83,16 +68,6 @@ export default function RacketPage() {
               </Link>
             </div>
           </div>
-          {/*
-          // Add thumbnails for other item images later
-          <div className={styles.thumbnailContainer}>
-            {[1, 2, 3].map((index) => (
-              <div key={index} className={styles.thumbnail}>
-                <div className={styles.placeholderSmall}></div>
-              </div>
-            ))}
-          </div>
-          */}
         </div>
 
         <div className={styles.priceInfo}>          
@@ -110,29 +85,6 @@ export default function RacketPage() {
         </div>
         <button className={styles.addButton}>Add to Cart</button>
       </div>      
-      {/* 
-      // Add related items later
-      <div className={styles.relatedRackets}>
-        <h2 className={styles.relatedTitle}>Related Rackets</h2>
-        <div className={styles.relatedGrid}>
-          {initialRackets
-            .filter(r => r.id !== racket.id && r.brandId === racket.brandId)
-            .slice(0, 3)
-            .map(related => (
-              <Link key={related.id} href={`/rackets/${related.id}`} className={styles.relatedCard}>
-                <div className={styles.relatedImage}>
-                  <div className={styles.placeholderSmall}></div>
-                </div>
-                <div className={styles.relatedInfo}>
-                  <h3 className={styles.relatedName}>{related.name}</h3>
-                  <p className={styles.relatedPrice}>${related.price.toFixed(2)}</p>
-                </div>
-              </Link>
-            ))}
-        </div>
-      </div> 
-      */}
     </div>
   );
 }
-

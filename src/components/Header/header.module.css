@@ -38,6 +38,12 @@
   color: #000;
 }
 
+.active {
+  color: #a29f9f;
+  font-weight: bold;
+  border-bottom: 2px solid #a29f9f;
+}
+
 .icons {
   display: flex;
   gap: 1rem;

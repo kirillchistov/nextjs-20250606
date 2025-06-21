@@ -1,6 +1,6 @@
-import { Racket } from '../../types';
+import { IRacket } from '../../types';
 
-export const initialRackets: Racket[] = [
+export const initialRackets: IRacket[] = [
     {
       "id": 1,
       "name": "Wilson Pro Staff 97 v14",

@@ -1,4 +1,4 @@
-export interface Racket {
+export interface IRacket {
   id: string | number;
   name: string;
   price: number;
@@ -18,7 +18,7 @@ export interface Brand {
 }
 
 export type racketResponse = {
-    product: Racket
+    product: IRacket
 }
 
 export type racketProps = {
