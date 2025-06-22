@@ -1,0 +1,390 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumbs a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.productContainer {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.productImages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.racketImages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainImage {
+  background-color: #fff;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.thumbnailContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.thumbnail {
+  flex: 1;
+  height: 100px;
+  background: #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.placeholderSmall {
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.productInfo {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.racketInfo {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.brandBadge {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.productName {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.priceSection {
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.specs {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.spec span:first-child {
+  font-weight: 500;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.specLabel {
+  font-weight: 500;
+  color: #666;
+}
+
+.specValue {
+  font-weight: 500;
+}
+
+.addToCart {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quantityButton {
+  background: #f8f8f8;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantityButton:hover {
+  background: #eee;
+}
+
+.quantity {
+  padding: 0 1.5rem;
+  font-weight: 500;
+}
+
+.addButton {
+  flex: 1;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.addButton:hover {
+  background: #333;
+}
+
+.relatedProducts {
+  margin-top: 4rem;
+  border-top: 1px solid #eee;
+  padding-top: 3rem;
+}
+
+.relatedTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.relatedCard {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.relatedCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.relatedImage {
+  height: 180px;
+  background: #f8f8f8;
+}
+
+.relatedInfo {
+  padding: 1.2rem;
+}
+
+.relatedName {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.relatedPrice {
+  font-weight: 600;
+  color: #333;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .productContainer {
+    flex-direction: column;
+  }
+  
+  .addToCart {
+    flex-direction: column;
+  }
+}
+
+
+.product-detail {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.placeholder-image {
+  background-color: #fff;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.product-info {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.product-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.price-section {
+  margin-bottom: 1.5rem;
+}
+
+
+.description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.add-to-cart {
+  display: flex;
+  gap: 1rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.quantity-selector button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity-selector span {
+  padding: 0 1rem;
+}
+
+.add-button {
+  flex: 1;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.racketContainer {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.racketSpecs {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.specItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.specLabel {
+  font-weight: 500;
+  color: #666;
+}
+
+.specValue {
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .racketContainer {
+    flex-direction: column;
+  }
+}
