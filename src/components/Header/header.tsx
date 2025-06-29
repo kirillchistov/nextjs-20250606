@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,20 +12,20 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <Link href="/" className={styles.logo}>
+        <Link href='/' className={styles.logo}>
           TENNIS STORE
         </Link>
         
         <nav className={styles.nav}>
-          <Link href="/" 
+          <Link href='/' 
             className={classNames(styles.navLink, pathname === '/' ? styles.active : '')}>
               Home
           </Link>
-          <Link href="/rackets" 
+          <Link href='/rackets' 
             className={classNames(styles.navLink, pathname === '/rackets' ? styles.active : '')}>
               Rackets
           </Link>
-          <Link href="/about" 
+          <Link href='/about' 
             className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
               About
           </Link>

@@ -1,7 +1,7 @@
 import { IRacket } from '../../types';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './racket.module.css';
+import styles from './product.module.css';
 
 interface ProductCardProps {
   racket: IRacket;
@@ -12,14 +12,14 @@ export default function ProductPage({ racket }: ProductCardProps) {
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <div className={styles.imagePlaceholder}>
-          <Link href={`/racket/${racket.id}`} >
+          {/* <Link href={`/racket/${racket.id}`} > */}
             <Image
                 src={racket.imageUrl}
                 width={250}
                 height={250}
                 alt={racket.name}
             />
-          </Link>
+          {/* </Link> */}
         </div>
       </div>
       <div className={styles.info}>

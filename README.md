@@ -1,16 +1,13 @@
 # nextjs-20250606
-
 This is a [Next.js](https://nextjs.org/) learning project. 
 
 ### HW - 1
-
 * [x] Create a public [GitHub] (https://github.com/)) project repo 
 * [x] Create hw-1 branch
 * [x] Create README.md 
 * [x] Create pull request and post the link to the class group
 
 ### HW - 2
-
 * [x] Bootstrap the app with npx create-next-app@latest
 * [x] Remove unnecesary files
 * [x] Build pages based on the Figma layout and mock data:
@@ -21,6 +18,15 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Use generateStaticParams to pre-generate pages for any 3 products of choice
 * [x] Enable images by launching the server [repo to clone] (https://github.com/zubkov7/next-webinar-server).
 
+
+### HW - 3
+* [x] Start using server data 
+* [x] Home page will load 2 selections: 10 items from the overall list and Top-10 using streaming render
+* [x] The rackets page will load and display 20 items
+* [x] Create separate page for Top-10 selection
+* [x] On the rackets page access item data by id
+* [x] Add loading indicators (Suspense/loading.tsx)
+* [x] Create separate 404 pages for the rackets page and general 404
 
 ## Getting Started
 

@@ -7,7 +7,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <div>
-      <div>products page - {slug.join(",")}</div>
+      <div>products page - {slug.join(',')}</div>
     </div>
   );
 }

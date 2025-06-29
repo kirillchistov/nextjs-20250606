@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import type { Metadata } from 'next';
-import { Layout } from "../components/Layout/layout";
-import { FC, PropsWithChildren } from "react";
+import { Layout } from '../components/Layout/layout';
+import { FC, PropsWithChildren } from 'react';
 
 import { Inter } from 'next/font/google';
 

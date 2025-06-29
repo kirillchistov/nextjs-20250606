@@ -1,0 +1,9 @@
+.link {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.isActive {
+    color: coral; 
+}

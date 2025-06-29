@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.content {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+    max-width: 100%;
+}
