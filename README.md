@@ -28,6 +28,13 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Add loading indicators (Suspense/loading.tsx)
 * [x] Create separate 404 pages for the rackets page and general 404
 
+### HW - 4
+* [x] Add metadata to pages. 
+* [x] Metadata for the racket page must be generated dynamically
+* [x] Add error handling (error.tsx and global-error.tsx)
+* [x] Add top10 segment revalidation using revalidateTag
+* [x] Add client navigation indicator
+
 ## Getting Started
 
 Pre-requisites:
