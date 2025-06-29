@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const Racket: FC<Props> = ({ racket }) => {
-  const { id, name, imageUrl, description, type, brand, price, model, year } = racket;
+  const { name, imageUrl, description, type, brand, price, model, year } = racket;
 
   return (
     <section className={styles.root}>
@@ -43,14 +43,12 @@ export const Racket: FC<Props> = ({ racket }) => {
           <div className={styles.racketImages}>
             <div className={styles.mainImage}>
               <div className={styles.placeholder}>
-                <Link href={`/racket/${id}`} >
-                  <Image
-                      src={imageUrl}
-                      width={350}
-                      height={350}
-                      alt={name}
-                  />
-                </Link>
+                <Image
+                    src={imageUrl}
+                    width={350}
+                    height={350}
+                    alt={name}
+                />
               </div>
             </div>
           </div>

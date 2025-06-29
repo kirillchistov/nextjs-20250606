@@ -1,8 +1,8 @@
 import { FC } from 'react';
-
-import styles from './selected.module.css';
 import { Link } from '../Link/link';
+import Image from 'next/image';
 import { IRacket } from '../../types/index';
+import styles from './selected.module.css';
 
 type Props = {
   racket: IRacket;
@@ -13,7 +13,15 @@ export const SelectedItem: FC<Props> = ({ racket }) => {
 
   return (
     <div className={styles.root}>
-      <img className={styles.image} src={imageUrl} alt={name} />
+      <Link href={`/racket/${id}`} >
+        <Image
+            src={imageUrl}
+            width={350}
+            height={350}
+            alt={name}
+            className={styles.image}
+        />
+      </Link>
       <Link href={`/racket/${id}`}>{name}</Link>
     </div>
   );

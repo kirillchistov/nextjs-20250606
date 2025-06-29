@@ -1,5 +1,5 @@
 import { IRacket, Response } from '../types/index';
-import { BASE_API_URL } from '../constants/api';
+// import { BASE_API_URL } from '../constants/api';
 
 interface Params {
   page?: number;
@@ -8,10 +8,10 @@ interface Params {
 
 export const getRackets = async ({
   page = 1,
-  limit = 2,
+  limit = 4,
 }: Params): Promise<Response<IRacket[]>> => {
   const result = await fetch(
-    `{BASE_API_URL}/products?page=${page}&limit=${limit}`
+    `http://localhost:4000/api/products?page=${page}&limit=${limit}`
   );
 
   if (!result.ok) {

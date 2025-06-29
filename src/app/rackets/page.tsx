@@ -1,14 +1,19 @@
-// import RacketGrid from '../../components/RacketGrid/rackets';
-import { SelectedItem } from '../../components/SelectedItem/selected';
-import { rackets } from '../../constants/mock';
+import { getRackets } from '../../services/get-rackets';
+import { RacketGrid } from '../../components/RacketGrid/racket-grid';
 
 
-export default function RacketsPage() {
+const RacketsPage = async () => {
+  const { isError, data = [] } = await getRackets({ limit: 20 });
+  
+  if (isError) {
+    return 'error';
+  }
+
   return (
     <main>
-      {rackets.map((racket) => (
-        <SelectedItem key={racket.id} racket={racket} />
-      ))}
+      <RacketGrid rackets={data} />
     </main>
   );
 }
+
+export default RacketsPage;
