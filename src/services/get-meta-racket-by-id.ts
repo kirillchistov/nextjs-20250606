@@ -1,14 +1,14 @@
-import { BASE_API_URL } from "../constants/api";
-import { IRacket, Response } from "../types/index";
+import { BASE_API_URL } from '../constants/api';
+import { IRacket, Response } from '../types/index';
 
 type Params = {
   id: string;
 };
 
-export const getRacketById = async ({
+export const getMetaRacketById = async ({
   id,
 }: Params): Promise<Response<IRacket>> => {
-  const result = await fetch(`${BASE_API_URL}/product/${id}`, {
+  const result = await fetch(`${BASE_API_URL}/meta/product/${id}`, {
     next: {
       revalidate: 20,
     },

@@ -2,10 +2,9 @@
 
 import NextLink from 'next/link';
 import { ComponentProps, FC } from 'react';
-
-import styles from './link.module.css';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
+import styles from './link.module.css';
 
 type Props = ComponentProps<typeof NextLink>;
 

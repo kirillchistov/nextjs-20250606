@@ -1,8 +1,12 @@
 import { IRacket, Response } from '../types/index';
-// import { BASE_API_URL } from '../constants/api';
+import { TOP_10_REQUEST_TAG } from '../constants/api';
 
 export const getTop10Rackets = async (): Promise<Response<IRacket[]>> => {
-  const result = await fetch(`http://localhost:4000/api/top-10`);
+  const result = await fetch(`http://localhost:4000/api/top-10`, {
+    next: {
+      tags: [TOP_10_REQUEST_TAG],
+    },
+  });
 
   if (!result.ok) {
     return { isError: true, data: undefined };

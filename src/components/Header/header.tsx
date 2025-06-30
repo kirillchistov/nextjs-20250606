@@ -25,10 +25,14 @@ export default function Header() {
             className={classNames(styles.navLink, pathname === '/rackets' ? styles.active : '')}>
               Rackets
           </Link>
-          <Link href='/about' 
+          <Link href='/rackets/top-10' 
+            className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
+              Top-10
+          </Link>
+          {/* <Link href='/about' 
             className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
               About
-          </Link>
+          </Link> */}
         </nav>
         
         <div className={styles.icons}>
