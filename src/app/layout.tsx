@@ -1,14 +1,14 @@
-import '../styles/globals.css';
 import type { Metadata } from 'next';
-import { Layout } from '../components/Layout/layout';
 import { FC, PropsWithChildren } from 'react';
-
+import { Layout } from '../components/Layout/layout';
+import NextTopLoader from 'nextjs-toploader';
+import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'NextJS Course Project',
+  title: 'Tennis Store as part of NextJS Course Project',
   description: 'Tennis Store App',
 };
 
@@ -16,6 +16,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <NextTopLoader />
         <Layout>{children}</Layout>
       </body>
     </html>
