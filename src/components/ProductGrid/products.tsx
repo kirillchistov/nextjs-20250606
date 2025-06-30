@@ -9,7 +9,7 @@ export default function ProductGrid() {
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
         <h2 className={styles.sectionTitle}>Featured Products</h2>
-        <div className={styles.sectionLink}><Link href="/rackets" className={styles.navLink}>View All &#8599;</Link></div>
+        <div className={styles.sectionLink}><Link href='/rackets' className={styles.navLink}>View All &#8599;</Link></div>
       </div>
       <div className={styles.grid}>
         {rackets.map(racket => (

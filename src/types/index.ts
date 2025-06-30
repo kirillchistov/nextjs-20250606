@@ -17,8 +17,9 @@ export interface Brand {
   name: string;
 }
 
-export type racketResponse = {
-    product: IRacket
+export type Response<Entity> = {
+    isError: boolean;
+    data?: Entity;
 }
 
 export type racketProps = {

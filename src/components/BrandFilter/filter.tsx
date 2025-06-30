@@ -15,7 +15,7 @@ export default function BrandFilter({
   return (
     <div className={styles.filterContainer}>
       <div className={styles.filterHeader}>
-        <h3 className={styles.filterTitle}>Filter by</h3>
+        <h3 className={styles.filterTitle}>Filter:</h3>
       </div>
       
       <div className={styles.filterGroup}>
@@ -24,7 +24,7 @@ export default function BrandFilter({
           {brands.map(brand => (
             <div key={brand.id} className={styles.brandItem}>
               <input
-                type="checkbox"
+                type='checkbox'
                 id={`brand-${brand.id}`}
                 checked={selectedBrands.includes(brand.id)}
                 onChange={() => onBrandToggle(brand.id)}

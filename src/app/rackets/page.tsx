@@ -1,9 +1,19 @@
-import RacketGrid from '../../components/RacketGrid/rackets';
+import { getRackets } from '../../services/get-rackets';
+import { RacketGrid } from '../../components/RacketGrid/racket-grid';
 
-export default function RacketsPage() {
+
+const RacketsPage = async () => {
+  const { isError, data = [] } = await getRackets({ limit: 20 });
+  
+  if (isError) {
+    return 'error';
+  }
+
   return (
     <main>
-      <RacketGrid />
+      <RacketGrid rackets={data} />
     </main>
   );
 }
+
+export default RacketsPage;
