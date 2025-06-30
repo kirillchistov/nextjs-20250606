@@ -1,13 +1,11 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '../Link/link';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 import styles from './header.module.css';
 
 export default function Header() {
-
-  const pathname = usePathname();
 
   return (
     <header className={styles.header}>
@@ -17,22 +15,15 @@ export default function Header() {
         </Link>
         
         <nav className={styles.nav}>
-          <Link href='/' 
-            className={classNames(styles.navLink, pathname === '/' ? styles.active : '')}>
-              Home
+          <Link href='/'>
+            Home
           </Link>
-          <Link href='/rackets' 
-            className={classNames(styles.navLink, pathname === '/rackets' ? styles.active : '')}>
-              Rackets
+          <Link href='/rackets'>
+            Rackets
           </Link>
-          <Link href='/rackets/top-10' 
-            className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
-              Top-10
+          <Link href='/about'>
+            About
           </Link>
-          {/* <Link href='/about' 
-            className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
-              About
-          </Link> */}
         </nav>
         
         <div className={styles.icons}>

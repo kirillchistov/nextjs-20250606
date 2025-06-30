@@ -1,9 +1,10 @@
 .link {
     color: black;
     font-size: 14px;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .isActive {
-    color: coral; 
+    color: #f408f8;
+    text-decoration: none;
 }
