@@ -2,13 +2,13 @@ import { FC } from 'react';
 import { Link } from '../Link/link';
 import Image from 'next/image';
 import { IRacket } from '../../types/index';
-import styles from './selected.module.css';
+import styles from './selection.module.css';
 
 type Props = {
   racket: IRacket;
 };
 
-export const SelectedItem: FC<Props> = ({ racket }) => {
+export const SelectionItem: FC<Props> = ({ racket }) => {
   const { imageUrl, name, id } = racket;
 
   return (

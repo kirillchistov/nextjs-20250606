@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Link } from '../Link/link';
 
 import { IRacket } from '../../types/index';
-import { SelectedItem } from '../SelectedItem/selected';
+import { SelectionItem } from '../SelectionItem/selection-item';
 import styles from '../ProductGrid/products.module.css';
 
 type Props = {
@@ -18,7 +18,7 @@ export const RacketGrid: FC<Props> = ({ rackets }) => {
       </div>
       <div className={styles.filterGrid}>
         {rackets.map((racket: IRacket) => (
-          <SelectedItem key={racket.id} racket={racket} />
+          <SelectionItem key={racket.id} racket={racket} />
         ))}
       </div>
     </section>

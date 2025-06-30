@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '../Link/link';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 import styles from './header.module.css';
@@ -17,17 +17,14 @@ export default function Header() {
         </Link>
         
         <nav className={styles.nav}>
-          <Link href='/' 
-            className={classNames(styles.navLink, pathname === '/' ? styles.active : '')}>
-              Home
+          <Link href='/'>
+            Home
           </Link>
-          <Link href='/rackets' 
-            className={classNames(styles.navLink, pathname === '/rackets' ? styles.active : '')}>
-              Rackets
+          <Link href='/rackets'>
+            Rackets
           </Link>
-          <Link href='/about' 
-            className={classNames(styles.navLink, pathname === '/about' ? styles.active : '')}>
-              About
+          <Link href='/about'>
+            About
           </Link>
         </nav>
         

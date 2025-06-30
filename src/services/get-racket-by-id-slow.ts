@@ -1,5 +1,5 @@
 import { BASE_API_URL } from "../constants/api";
-import { IRacket, Response } from "../types/racket";
+import { IRacket, Response } from "../types/index";
 
 type Params = {
   id: string;
