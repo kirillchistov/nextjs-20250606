@@ -1,17 +1,13 @@
-'use client';
-
+import { Link } from '../../components/Link/link';
 import styles from './style.module.css';
 
-import { useRouter } from 'next/navigation';
-
 export default function About() {
-  console.log('render About page');
-  const router = useRouter();
 
   return (
     <div className={styles.root}>
-      <div>About page</div>
-      <button onClick={() => router.push('/rackets')}>Back to Rackets</button>
+      <h2>About page</h2>
+      <div>Nothing to show here yet</div>
+      <Link href={'/rackets'}>Back to Rackets</Link>
     </div>
   );
 }

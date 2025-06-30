@@ -9,10 +9,6 @@ type racketProps = {
   params: Promise<{ racketId: string }>;
 };
 
-// export const generateStaticParams = () => {
-//   return [{ racketId: '1' }, { racketId: '2' }, { racketId: '3' }];
-// };
-
 export const generateMetadata = async ({
   params,
 }: racketProps): Promise<Metadata> => {

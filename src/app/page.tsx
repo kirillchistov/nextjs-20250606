@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { SelectedItem } from '../components/SelectedItem/selected';
+import { SelectionItem } from '../components/SelectionItem/selection-item';
 import { Selection } from '../components/Selection/selection';
 import { getRackets } from '../services/get-rackets';
 import { getTop10Rackets } from '../services/get-top-10-rackets';
@@ -24,7 +24,7 @@ const Home = async () => {
       {!isRacketsError && Boolean(racketsData?.length) && (
         <Selection title='Some Rackets' hrefToAll='/rackets'>
           {racketsData.map((racket) => (
-            <SelectedItem key={racket.id} racket={racket} />
+            <SelectionItem key={racket.id} racket={racket} />
           ))}
         </Selection>
       )}
@@ -32,7 +32,7 @@ const Home = async () => {
       {!isRacketsTop10Error && Boolean(racketsTop10Data?.length) && (
         <Selection title='Top 10 rackets' hrefToAll='/rackets/top-10'>
           {racketsTop10Data.map((racket) => (
-            <SelectedItem key={racket.id} racket={racket} />
+            <SelectionItem key={racket.id} racket={racket} />
           ))}
         </Selection>
       )}
