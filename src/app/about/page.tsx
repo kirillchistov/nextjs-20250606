@@ -1,4 +1,3 @@
-'use client';
 import { Link } from '../../components/Link/link';
 import styles from './style.module.css';
 
