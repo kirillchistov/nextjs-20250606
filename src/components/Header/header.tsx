@@ -1,8 +1,6 @@
 'use client';
 
 import { Link } from '../Link/link';
-import { usePathname } from 'next/navigation';
-import classNames from 'classnames';
 import styles from './header.module.css';
 
 export default function Header() {
