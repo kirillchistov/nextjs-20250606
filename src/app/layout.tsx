@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { FC, PropsWithChildren } from 'react';
-import { Layout } from '../components/Layout/layout';
 import NextTopLoader from 'nextjs-toploader';
 import '../styles/globals.css';
 import { Inter } from 'next/font/google';
@@ -17,7 +16,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
     <html lang='en'>
       <body className={inter.className}>
         <NextTopLoader />
-        <Layout>{children}</Layout>
+        {children}
       </body>
     </html>
   );

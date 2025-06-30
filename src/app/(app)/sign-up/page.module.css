@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: auto;
+    border: 1px solid;
+    padding: 32px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 16px;
+    width: 200px;
+    height: 200px;
+}
+
+.error {
+    color: red;
+}
+
+.button {
+    margin-top: auto;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

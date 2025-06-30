@@ -1,9 +1,13 @@
 'use client';
 
+import { use } from 'react';
 import { Link } from '../Link/link';
+import { UserContext } from '../../providers/user';
+import UserDropdown from './user-dropdown';
 import styles from './header.module.css';
 
 export default function Header() {
+  const { user } = use(UserContext);
 
   return (
     <header className={styles.header}>
@@ -25,9 +29,17 @@ export default function Header() {
         </nav>
         
         <div className={styles.icons}>
-          <button className={styles.iconButton}>
+          {user ? (
+            <UserDropdown name={user.login} />
+          ) : (
+            <>
+              <Link href='/sign-in' className={styles.navLink}>Login</Link>
+              <Link href='/sign-up' className={styles.navLink}>Signup</Link>
+            </>
+          )}
+          {/* <button className={styles.iconButton}>
             <span className={styles.icon}>🔍</span>
-          </button>
+          </button> */}
           <button className={styles.iconButton}>
             <span className={styles.icon}>🛒</span>
             <span className={styles.cartCount}>0</span>

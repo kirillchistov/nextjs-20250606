@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react';
-import { RacketContainer } from '../../../components/Racket/racket-container';
 import { Metadata } from 'next';
-import { getMetaRacketById } from '../../../services/get-meta-racket-by-id';
+import { RacketContainer } from '../../../../components/Racket/racket-container';
+import { getMetaRacketById } from '../../../../services/get-meta-racket-by-id';
 import { notFound } from 'next/navigation';
 
 

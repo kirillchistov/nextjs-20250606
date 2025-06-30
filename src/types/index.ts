@@ -26,3 +26,16 @@ export type racketProps = {
   params: Promise<{ racketId: string }>;
   searchParams: Promise<Record<string, string>>;
 };
+
+export interface IUser {
+  login: string;
+  id?:string;
+  email?: string;
+  name?: string;
+  isAdmin: boolean;
+}
+
+export interface LoginState {
+  error?: string;
+  redirectTo?: string;
+}
