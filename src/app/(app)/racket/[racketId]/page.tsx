@@ -4,7 +4,6 @@ import { RacketContainer } from '../../../../components/Racket/racket-container'
 import { getMetaRacketById } from '../../../../services/get-meta-racket-by-id';
 import { notFound } from 'next/navigation';
 
-
 type racketProps = {
   params: Promise<{ racketId: string }>;
 };
@@ -12,6 +11,7 @@ type racketProps = {
 export const generateMetadata = async ({
   params,
 }: racketProps): Promise<Metadata> => {
+
   const { racketId } = await params;
 
   const result = await getMetaRacketById({ id: racketId });

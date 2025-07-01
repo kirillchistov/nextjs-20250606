@@ -7,7 +7,7 @@ import { UserContext } from '../../providers/user';
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const { user } = use(UserContext);
 
-  if (!user?.isAdmin) {
+  if (!user) {
     redirect('/sign-in');
   }
 
