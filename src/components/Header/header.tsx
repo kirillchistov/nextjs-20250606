@@ -3,7 +3,6 @@
 import { use } from 'react';
 import { Link } from '../Link/link';
 import { UserContext } from '../../providers/user';
-// import UserDropdown from './user-dropdown';
 import styles from './header.module.css';
 
 export default function Header() {
@@ -31,7 +30,6 @@ export default function Header() {
         
         <div className={styles.icons}>
           {!user ? (
-            // 
             <>
               <Link href='/sign-in' className={styles.navLink}>Login</Link>
               <Link href='/sign-up' className={styles.navLink}>Signup</Link>

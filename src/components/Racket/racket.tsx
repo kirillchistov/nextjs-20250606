@@ -14,6 +14,7 @@ type Props = {
 
 export const Racket: FC<Props> = ({ racket }) => {
   const { isAuthorized } = use(UserContext);
+
   const { name, imageUrl, description, type, brand, price, model, id, year } = racket;
 
   return (
