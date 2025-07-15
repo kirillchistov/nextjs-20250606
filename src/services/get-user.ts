@@ -12,6 +12,8 @@ export const getUser = async (): Promise<Response<IUser>> => {
     },
   });
 
+  console.log(result);
+
   if (result.status === 401) {
     return { isError: false, data: undefined };
   }
@@ -21,6 +23,8 @@ export const getUser = async (): Promise<Response<IUser>> => {
   }
 
   const data: { user: IUser } = await result.json();
+
+  console.log(data);
 
   return { isError: false, data: data.user };
 };

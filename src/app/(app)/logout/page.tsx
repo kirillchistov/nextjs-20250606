@@ -13,7 +13,7 @@ const handleLogout = async () => {
   location.assign('/');
 };
 
-const Login = () => {
+const Logout = () => {
   const { user } = use(UserContext);
 
   const [isPending, startTransition] = useTransition();
@@ -23,10 +23,13 @@ const Login = () => {
   }
 
   return (
-    <button disabled={isPending} onClick={() => startTransition(handleLogout)}>
-      Logout
-    </button>
+    <>
+      <h3>Are you sure you want to logout?</h3>
+      <button disabled={isPending} onClick={() => startTransition(handleLogout)}>
+        Logout
+      </button>
+    </>
   );
 };
 
-export default Login;
+export default Logout;
