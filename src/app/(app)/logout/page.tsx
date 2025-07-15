@@ -3,6 +3,7 @@
 import { use, useTransition } from 'react';
 import { BASE_API_URL } from '../../../constants/api';
 import { UserContext } from '../../../providers/user';
+import styles from './logout.module.css';
 
 const handleLogout = async () => {
   await fetch(`${BASE_API_URL}/auth/logout`, {
@@ -21,11 +22,11 @@ const Logout = () => {
   if (!user) {
     return;
   }
-
   return (
     <>
       <h3>Are you sure you want to logout?</h3>
-      <button disabled={isPending} onClick={() => startTransition(handleLogout)}>
+      <button className={styles.logoutButton}
+        disabled={isPending} onClick={() => startTransition(handleLogout)}>
         Logout
       </button>
     </>
