@@ -35,6 +35,12 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Add top10 segment revalidation using revalidateTag
 * [x] Add client navigation indicator
 
+### HW - 5
+* [x] Implement sign-up, sign-in and logout
+* [x] Request user data on racket pages (write cookies)
+* [x] Render 'Add to favorites' button for authorized users
+* [x] Factual addition to favorites resides in userData.isFavorite. For now we only render, modification will be implemented later
+
 ## Getting Started
 
 Pre-requisites:

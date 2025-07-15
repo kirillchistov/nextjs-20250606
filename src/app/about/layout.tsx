@@ -5,7 +5,6 @@ export default function AboutLayout({
 }>) {
   return (
     <div>
-      about layout
       <div>{children}</div>
     </div>
   );

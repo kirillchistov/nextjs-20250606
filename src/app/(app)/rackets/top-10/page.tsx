@@ -1,5 +1,5 @@
-import { RacketGrid } from '../../../components/RacketGrid/racket-grid';
-import { getTop10Rackets } from '../../../services/get-top-10-rackets';
+import { RacketGrid } from '../../../../components/RacketGrid/racket-grid';
+import { getTop10Rackets } from '../../../../services/get-top-10-rackets';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -1,7 +1,10 @@
+'use client';
+
 import { IRacket } from '../../types/index';
 import Image from 'next/image';
 import Link from 'next/Link';
-import { FC } from 'react';
+import { FC, use } from 'react';
+import { UserContext } from '../../providers/user/index';
 
 import styles from './racket.module.css';
 
@@ -10,7 +13,9 @@ type Props = {
 };
 
 export const Racket: FC<Props> = ({ racket }) => {
-  const { name, imageUrl, description, type, brand, price, model, year } = racket;
+  const { isAuthorized } = use(UserContext);
+
+  const { name, imageUrl, description, type, brand, price, model, id, year } = racket;
 
   return (
     <section className={styles.root}>
@@ -21,7 +26,7 @@ export const Racket: FC<Props> = ({ racket }) => {
         <div className={styles.racketContainer}>
           <div className={styles.racketInfo}>
             <div className={styles.brandBadge}>
-              {brand.name}
+              {brand.name} ({id})
             </div>          
             <h1 className={styles.racketName}>{name}</h1>
             <p className={styles.description}>{description}</p>
@@ -57,13 +62,16 @@ export const Racket: FC<Props> = ({ racket }) => {
               <span className={styles.price}>${price.toFixed(2)}</span>
             </div>
             <div className={styles.addToCart}>
-              <div className={styles.quantitySelector}>
+              {/* <div className={styles.quantitySelector}>
                 <button className={styles.quantityButton}>-</button>
                 <span className={styles.quantity}>1</span>
                 <button className={styles.quantityButton}>+</button>
-              </div>
+              </div> */}
               <div>
-                <button className={styles.addButton}>Add to Cart</button>
+                {/* <button className={styles.addButton}>Add to Cart</button> */}
+                {isAuthorized && (
+                  <button className={styles.addButton}>Add to Favorites</button>
+                )}
               </div>
             </div>
           </div>
