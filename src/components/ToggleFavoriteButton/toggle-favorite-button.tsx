@@ -8,6 +8,8 @@ import {
 } from '../../providers/favorite/hooks';
 import { handleFavorite } from './handle-favorite';
 
+import styles from './toggle-favorite-button.module.css';
+
 interface Props {
   isFavoriteInitial?: boolean;
   racketId: IRacket['id'];
@@ -27,8 +29,9 @@ export const ToggleFavoriteButton: FC<Props> = ({
   };
 
   return (
-    <button onClick={() => handleClick(isFavorite)}>
-      {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+    <button className={styles.addFavButton}
+        onClick={() => handleClick(isFavorite)}>
+        {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
     </button>
   );
 };
