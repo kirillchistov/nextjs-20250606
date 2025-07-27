@@ -7,7 +7,6 @@ import styles from './header.module.css';
 
 export default function Header() {
   const { user } = use(UserContext);
-  console.log(user?.email);
 
   return (
     <header className={styles.header}>

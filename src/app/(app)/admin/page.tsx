@@ -8,7 +8,7 @@ const Admin = () => {
   const { user } = use(UserContext);
 
   if (!user?.isAdmin) {
-    redirect('/sign-in');
+    redirect('/403');
   }
 
   return <h2>Admin page</h2>;
