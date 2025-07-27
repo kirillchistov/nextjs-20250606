@@ -42,8 +42,8 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Factual addition to favorites resides in userData.isFavorite. For now we only render, modification will be implemented later
 
 ### HW - 6
-* [] Implement 'add to' / 'remove from favorites' logic via context (SWR hooks)
-* [] Implement infinite scroll on racket page using SWR infinite
+* [x] Implement 'add to' / 'remove from favorites' logic via context (SWR hooks)
+* [x] Implement infinite scroll on racket page using SWR infinite
 
 ## Getting Started
 
