@@ -9,7 +9,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main className={styles.container}>
-        <div className={styles.pageTitle}>About Tennis Pro Shop</div>
+        <div className={styles.pageTitle}>About Tennis Pro Store</div>
         
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Our Story</h2>
@@ -30,12 +30,12 @@ export default function AboutPage() {
           <h2 className={styles.sectionTitle}>Our Mission</h2>
           <div className={styles.content}>
             <p>
-              We're dedicated to helping players at all levels find their perfect racket. Whether 
-              you're a beginner looking for your first racket or a professional seeking tournament-grade 
+              We are determined to helping players at all levels find their perfect racket. Whether 
+              you are a beginner looking for your first racket or a professional seeking tournament-grade 
               equipment, our experts are here to guide you.
             </p>
             <p className={styles.highlight}>
-              We believe the right racket can transform your game, and we're committed to matching 
+              We believe the right racket can transform your game, and we are committed to matching 
               every player with their ideal equipment.
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
             </p>
             <p>
               <strong>Note:</strong> We currently ship to over 50 countries worldwide. During checkout, 
-              you'll see available shipping options for your location.
+              you will see available shipping options for your location.
             </p>
           </div>
         </section>
@@ -137,7 +137,7 @@ export default function AboutPage() {
           <h2 className={styles.sectionTitle}>Returns Policy</h2>
           <div className={styles.content}>
             <p>
-              We offer a 30-day satisfaction guarantee on all rackets. If you're not completely satisfied 
+              We offer a 30-day satisfaction guarantee on all rackets. If you are not completely satisfied 
               with your purchase, you may return it for a full refund or exchange.
             </p>
             <p>

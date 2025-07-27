@@ -1,17 +1,13 @@
-'use client';
-
-import { use } from 'react';
 import { Link } from '../Link/link';
-import { UserContext } from '../../providers/user';
+import { UserSection } from '../UserSection/user-section';
 import styles from './header.module.css';
 
 export default function Header() {
-  const { user } = use(UserContext);
 
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <Link href='/' className={styles.logo}>
+        <Link href='/' className={styles.headerLogo}>
           TENNIS STORE
         </Link>
         
@@ -28,19 +24,7 @@ export default function Header() {
         </nav>
         
         <div className={styles.icons}>
-          {!user ? (
-            <>
-              <Link href='/sign-in' className={styles.navLink}>Login</Link>
-              <Link href='/sign-up' className={styles.navLink}>Signup</Link>
-            </>
-          ) : (
-            <>
-              <Link href='/logout' className={styles.navLink}>Logout</Link>
-            </>
-          )}
-          {/* <button className={styles.iconButton}>
-            <span className={styles.icon}>🔍</span>
-          </button> */}
+          <UserSection className={styles.userSection} />
           <button className={styles.iconButton}>
             <span className={styles.icon}>🛒</span>
             <span className={styles.cartCount}>0</span>
