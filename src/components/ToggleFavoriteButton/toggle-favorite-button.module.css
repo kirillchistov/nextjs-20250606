@@ -1,0 +1,12 @@
+.addFavButton {
+  flex: 1;
+  width:100%;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}

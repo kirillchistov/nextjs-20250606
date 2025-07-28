@@ -14,9 +14,17 @@
   padding: 1rem 2rem;
 }
 
+.headerLogo {
+  font-size: 1.8rem;
+  /* margin-bottom: 1rem; */
+  font-weight: 800;
+  text-decoration: none;
+  color: #000;
+}
+
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
   text-decoration: none;
   color: #000;
 }
@@ -83,7 +91,7 @@
 .userButton {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -130,4 +138,8 @@
 .divider {
   height: 1px;
   background: #eee;
+}
+
+.userSection {
+  margin-left: 16px;
 }

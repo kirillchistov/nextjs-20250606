@@ -4,6 +4,7 @@ import { IRacket } from '../../types/index';
 import Image from 'next/image';
 import Link from 'next/Link';
 import { FC, use } from 'react';
+import { ToggleFavoriteButton } from '../ToggleFavoriteButton/toggle-favorite-button';
 import { UserContext } from '../../providers/user/index';
 
 import styles from './racket.module.css';
@@ -15,7 +16,7 @@ type Props = {
 export const Racket: FC<Props> = ({ racket }) => {
   const { isAuthorized } = use(UserContext);
 
-  const { name, imageUrl, description, type, brand, price, model, id, year } = racket;
+  const { name, imageUrl, description, type, brand, price, model, id, year, userData } = racket;
 
   return (
     <section className={styles.root}>
@@ -70,7 +71,10 @@ export const Racket: FC<Props> = ({ racket }) => {
               <div>
                 {/* <button className={styles.addButton}>Add to Cart</button> */}
                 {isAuthorized && (
-                  <button className={styles.addButton}>Add to Favorites</button>
+                  <ToggleFavoriteButton
+                    racketId={id}
+                    isFavoriteInitial={userData?.isFavorite}
+                  />
                 )}
               </div>
             </div>

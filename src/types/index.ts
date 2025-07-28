@@ -10,6 +10,9 @@ export interface IRacket {
   year: number;
   top10: boolean;
   description: string;  
+  userData?: {
+    isFavorite?: boolean;
+  };
 }
 
 export interface Brand {
