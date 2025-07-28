@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 import { FC, PropsWithChildren } from 'react';
+import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
-import '../styles/globals.css';
 import { Inter } from 'next/font/google';
+import '../styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -7,4 +7,8 @@ const RacketsClientOnly = dynamic(
   { ssr: false, loading: () => <div>Loading dynamic...</div> }
 );
 
-export default RacketsClientOnly;
+const Page = () => {
+  <RacketsClientOnly />;
+};
+
+export default Page;

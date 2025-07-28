@@ -24,7 +24,6 @@ export const ToggleFavoriteButton: FC<Props> = ({
 
   const handleClick = async (isFavorite: boolean) => {
     setIsFavorite({ id: racketId, isFavorite: !isFavorite });
-    // handle response status
     await handleFavorite({ isFavorite, racketId });
   };
 

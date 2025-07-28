@@ -7,12 +7,9 @@ import { getRackets } from '../../../services/get-rackets';
 import { RacketsContainerClient } from '../../../components/Rackets/rackets-container-client';
 import { unstable_serialize } from 'swr/infinite';
 
-// import { RacketGrid } from '../../../components/RacketGrid/racket-grid';
-
 export const metadata: Metadata = {
   title: 'The best selection of Tennis Rackets',
 };
-
 
 const RacketsPage: FC = async () => {
   const { data } = await getRackets({ page: 1, limit: LIMIT });

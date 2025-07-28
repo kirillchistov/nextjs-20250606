@@ -1,12 +1,12 @@
 'use client';
 
 import { FC } from 'react';
+import useSWRInfinite from 'swr/infinite';
 import { BASE_API_URL } from '../../constants/api';
 import { LIMIT } from '../../app/(app)/rackets/constants';
 import { IRacket } from '../../types/index';
 import { getKey } from '../../app/(app)/rackets/get-key';
 import { RacketGrid } from '../RacketGrid/racket-grid';
-import useSWRInfinite from 'swr/infinite';
 
 import styles from './rackets-container-client.module.css';
 
