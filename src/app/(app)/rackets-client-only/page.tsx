@@ -1,14 +1,7 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-
-const RacketsClientOnly = dynamic(
-  () => import('../../../components/Rackets/rackets-container-client'),
-  { ssr: false, loading: () => <div>Loading dynamic...</div> }
-);
+import { redirect } from 'next/navigation';
 
 const Page = () => {
-  <RacketsClientOnly />;
+  redirect('/rackets');
 };
 
 export default Page;
