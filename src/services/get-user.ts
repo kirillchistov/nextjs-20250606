@@ -1,8 +1,13 @@
 import { BASE_API_URL } from '../constants/api';
+import { isDemoMode } from '../constants/demo';
 import { Response, IUser } from '../types/index';
 import { cookies } from 'next/headers';
 
 export const getUser = async (): Promise<Response<IUser>> => {
+  if (isDemoMode()) {
+    return { isError: false, data: undefined };
+  }
+
   const cookieStore = await cookies();
 
   const result = await fetch(`${BASE_API_URL}/auth/user`, {

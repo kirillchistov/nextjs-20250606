@@ -1,3 +1,4 @@
+
 import { BASE_API_URL } from '../constants/api';
 import { isDemoMode } from '../constants/demo';
 import { IRacket, Response } from '../types/index';
@@ -7,7 +8,7 @@ type Params = {
   id: string;
 };
 
-export const getMetaRacketById = async ({
+export const getRacketOgDataById = async ({
   id,
 }: Params): Promise<Response<IRacket>> => {
   if (isDemoMode()) {
@@ -16,10 +17,8 @@ export const getMetaRacketById = async ({
     return { isError: false, data };
   }
 
-  const result = await fetch(`${BASE_API_URL}/meta/product/${id}`, {
-    next: {
-      revalidate: 20,
-    },
+  const result = await fetch(`${BASE_API_URL}/product/${id}`, {
+    cache: 'force-cache',
   });
 
   if (result.status === 404) {

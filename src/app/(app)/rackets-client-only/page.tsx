@@ -1,10 +1,14 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-const RacketsClientOnly = dynamic(
-  () => import('../../../components/Rackets/rackets-container-client'),
-  { ssr: false, loading: () => <div>Loading dynamic...</div> }
-);
+export default function Page() {
+  const router = useRouter();
 
-export default RacketsClientOnly;
+  useEffect(() => {
+    router.replace('/rackets');
+  }, [router]);
+
+  return <p>Redirecting to rackets...</p>;
+}

@@ -1,9 +1,9 @@
 'use client';
 
-import { IRacket } from '../../types/index';
-import Image from 'next/image';
-import Link from 'next/Link';
 import { FC, use } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { IRacket } from '../../types/index';
 import { ToggleFavoriteButton } from '../ToggleFavoriteButton/toggle-favorite-button';
 import { UserContext } from '../../providers/user/index';
 
@@ -54,6 +54,8 @@ export const Racket: FC<Props> = ({ racket }) => {
                     width={350}
                     height={350}
                     alt={name}
+                    className={styles.image}
+                    sizes='(max-width: 900px) 100vw, 350px'
                 />
               </div>
             </div>
@@ -63,13 +65,7 @@ export const Racket: FC<Props> = ({ racket }) => {
               <span className={styles.price}>${price.toFixed(2)}</span>
             </div>
             <div className={styles.addToCart}>
-              {/* <div className={styles.quantitySelector}>
-                <button className={styles.quantityButton}>-</button>
-                <span className={styles.quantity}>1</span>
-                <button className={styles.quantityButton}>+</button>
-              </div> */}
               <div>
-                {/* <button className={styles.addButton}>Add to Cart</button> */}
                 {isAuthorized && (
                   <ToggleFavoriteButton
                     racketId={id}

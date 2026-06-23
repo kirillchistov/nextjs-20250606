@@ -9,7 +9,7 @@ export default function Footer() {
         </div>
       </div>        
       <div className={styles.footerBottom}>
-        <p>© 2025 Tennis Store. All rights reserved.</p>
+        <p>© 2026 Tennis Store. Some rights reserved.</p>
       </div>
     </footer>
   );

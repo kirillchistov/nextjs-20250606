@@ -1,11 +1,21 @@
 import { FC, Suspense } from 'react';
 import { Metadata } from 'next';
+import { isDemoMode } from '../../../../constants/demo';
+import { getDemoRacketIds } from '../../../../services/demo-store';
 import { getMetaRacketById } from '../../../../services/get-meta-racket-by-id';
 import { notFound } from 'next/navigation';
 import { RacketContainer } from '@/components/Racket/racket-container';
 
 type racketProps = {
   params: Promise<{ racketId: string }>;
+};
+
+export const generateStaticParams = async () => {
+  if (!isDemoMode()) {
+    return [];
+  }
+
+  return getDemoRacketIds().map((racketId) => ({ racketId }));
 };
 
 export const generateMetadata = async ({

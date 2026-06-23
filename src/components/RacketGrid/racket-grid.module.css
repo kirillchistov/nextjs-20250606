@@ -65,6 +65,23 @@
   background: #333;
 }
 
+.paginateButton {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  margin: 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.paginateBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sectionContainer {
   display: flex;
   justify-content: space-between;

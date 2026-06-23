@@ -16,6 +16,7 @@ export default function ProductPage({ racket }: ProductCardProps) {
               width={250}
               height={250}
               alt={racket.name}
+              sizes='(max-width: 768px) 100vw, 250px'
           />
         </div>
       </div>

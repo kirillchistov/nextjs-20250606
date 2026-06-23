@@ -1,4 +1,40 @@
 
+.filterContainer {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+}
+
+.filterHeader {
+  margin-bottom: 0.8rem;
+}
+
+.filterTitle {
+  font-size: 1rem;
+}
+
+.filterGroup {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.groupTitle {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.brandList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.4rem;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+}
+
 .checkbox {
   margin-right: 0.8rem;
   width: 1.1rem;
@@ -6,7 +42,32 @@
   cursor: pointer;
 }
 
+.brandLabel {
+  color: #333;
+  text-decoration: none;
+}
+
+.brandLabel:hover {
+  text-decoration: underline;
+}
+
 .buttonContainer {
   margin-top: 0.8rem;
   width: 100%;
+}
+
+.clearButton {
+  display: inline-block;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.clearButton:hover {
+  background: #333;
 }
