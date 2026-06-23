@@ -63,16 +63,16 @@ flowchart TD
   Layout --> Header[Header / UserSection]
   Layout --> Pages[Pages]
 
-  Pages --> Home[Home /]
-  Pages --> Rackets[/rackets]
-  Pages --> Racket[/racket/:id]
+  Pages --> Home["Home /"]
+  Pages --> Rackets["/rackets"]
+  Pages --> Racket["/racket/:id"]
   Pages --> Auth[Sign-in / Sign-up]
 
   Home --> Services[Server services]
   Rackets --> Services
   Racket --> Services
 
-  Services -->|local dev| API[next-webinar-server :4000]
+  Services -->|local dev| API["next-webinar-server :4000"]
   Services -->|GitHub Pages demo| DemoStore[Mock demo store]
 
   API --> DB[(SQLite + Prisma)]
@@ -150,7 +150,11 @@ The exported site is written to `out/`.
 
 1. Open [repository Pages settings](https://github.com/kirillchistov/nextjs-20250606/settings/pages)
 2. Under **Build and deployment → Source**, choose **GitHub Actions**
-3. Push to `main` or `hw-7`, or re-run the failed workflow from the Actions tab
+3. Merge `hw-7` into `main` and push, or re-run the workflow on `main` from the Actions tab
+
+The `github-pages` environment only allows deployments from `main` by default. Pushes to feature branches such as `hw-7` can build the artifact, but the deploy job is skipped until the changes land on `main`.
+
+If you want preview deploys from another branch, open [Environments → github-pages](https://github.com/kirillchistov/nextjs-20250606/settings/environments), edit **Deployment branches**, and add that branch explicitly.
 
 If Pages is still set to **Deploy from a branch**, the deploy job fails with `HttpError: Not Found` because `actions/deploy-pages` has nowhere to publish.
 
