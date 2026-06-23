@@ -4,7 +4,11 @@ import NextTopLoader from 'nextjs-toploader';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Tennis Store as part of NextJS Course Project',
@@ -14,7 +18,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={inter.variable}>
         <NextTopLoader />
         {children}
       </body>

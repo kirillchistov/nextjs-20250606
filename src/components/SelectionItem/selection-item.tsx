@@ -33,8 +33,10 @@ export const SelectionItem: FC<Props> = ({ racket }) => {
   return (
     <div className={styles.root}>
       {isFavorite && (
-        <img
+        <Image
           src='http://localhost:4000/bookmark.png'
+          width={32}
+          height={32}
           alt='bookmark icon'
           className={styles.favoriteIcon}
         />
@@ -47,6 +49,7 @@ export const SelectionItem: FC<Props> = ({ racket }) => {
             height={350}
             alt={name}
             className={styles.image}
+            sizes='(max-width: 768px) 100vw, 300px'
         />
       </Link>
       <Link href={`/racket/${id}`}>{name}</Link>

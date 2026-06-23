@@ -46,11 +46,11 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Implement infinite scroll on racket page using SWR infinite
 
 ### HW - 7
-* [] Implement pagination
-* [] Add brand filter using api/brands endpoint
-* [] Utilize Next Image component
-* [] Add font using next/font
-* [] Add opengraph-image generation for the racket page
+* [x] Implement pagination
+* [x] Add brand filter using api/brands endpoint
+* [x] Utilize Next Image component
+* [x] Add font using next/font
+* [x] Add opengraph-image generation for the racket page
 
 ## Getting Started
 

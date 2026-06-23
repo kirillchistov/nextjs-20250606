@@ -54,6 +54,8 @@ export const Racket: FC<Props> = ({ racket }) => {
                     width={350}
                     height={350}
                     alt={name}
+                    className={styles.image}
+                    sizes='(max-width: 900px) 100vw, 350px'
                 />
               </div>
             </div>
