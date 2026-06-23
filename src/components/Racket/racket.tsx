@@ -2,7 +2,7 @@
 
 import { FC, use } from 'react';
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { IRacket } from '../../types/index';
 import { ToggleFavoriteButton } from '../ToggleFavoriteButton/toggle-favorite-button';
 import { UserContext } from '../../providers/user/index';

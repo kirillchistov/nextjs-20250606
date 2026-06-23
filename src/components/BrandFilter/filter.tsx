@@ -1,17 +1,13 @@
 import { Brand } from '@/types';
+import Link from 'next/link';
 import styles from './filter.module.css';
 
 interface BrandFilterProps {
   brands: Brand[];
-  selectedBrands: number[];
-  onBrandToggle: (brandId: number) => void;
+  selectedBrand?: string;
 }
 
-export default function BrandFilter({ 
-  brands, 
-  selectedBrands, 
-  onBrandToggle 
-}: BrandFilterProps) {
+export default function BrandFilter({ brands, selectedBrand }: BrandFilterProps) {
   return (
     <div className={styles.filterContainer}>
       <div className={styles.filterHeader}>
@@ -26,21 +22,24 @@ export default function BrandFilter({
               <input
                 type='checkbox'
                 id={`brand-${brand.id}`}
-                checked={selectedBrands.includes(brand.id)}
-                onChange={() => onBrandToggle(brand.id)}
+                checked={selectedBrand === brand.name}
+                readOnly
                 className={styles.checkbox}
               />
-              <label htmlFor={`brand-${brand.id}`} className={styles.brandLabel}>
+              <Link
+                href={`/rackets?page=1&brand=${encodeURIComponent(brand.name)}`}
+                className={styles.brandLabel}
+              >
                 {brand.name}
-              </label>
+              </Link>
             </div>
           ))}
         </div>
       </div>      
       <div className={styles.buttonContainer}>
-        <button className={styles.clearButton} onClick={() => onBrandToggle(0)}>
+        <Link className={styles.clearButton} href='/rackets?page=1'>
           Reset all
-        </button>
+        </Link>
       </div>
     </div>
   );

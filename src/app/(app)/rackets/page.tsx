@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { LIMIT } from './constants';
+import { getBrands } from '../../../services/get-brands';
 import { getRackets } from '../../../services/get-rackets';
+import BrandFilter from '../../../components/BrandFilter/filter';
 import { RacketGrid } from '../../../components/RacketGrid/racket-grid';
 import styles from '../../../components/RacketGrid/racket-grid.module.css';
 
@@ -27,33 +29,55 @@ const getPageNumber = (page?: string | string[]) => {
   return pageNumber;
 };
 
-const getPageHref = (page: number) => `/rackets?page=${page}`;
+const getSelectedBrand = (brand?: string | string[]) => {
+  if (Array.isArray(brand)) {
+    return brand[0];
+  }
+
+  return brand;
+};
+
+const getPageHref = (page: number, brand?: string) => {
+  const searchParams = new URLSearchParams({ page: String(page) });
+
+  if (brand) {
+    searchParams.set('brand', brand);
+  }
+
+  return `/rackets?${searchParams}`;
+};
 
 const RacketsPage = async ({ searchParams }: Props) => {
-  const { page } = await searchParams;
+  const { page, brand } = await searchParams;
   const pageNumber = getPageNumber(page);
-  const { data } = await getRackets({ page: pageNumber, limit: LIMIT });
+  const selectedBrand = getSelectedBrand(brand);
+  const [racketsResponse, brandsResponse] = await Promise.all([
+    getRackets({ page: pageNumber, limit: LIMIT, brand: selectedBrand }),
+    getBrands(),
+  ]);
 
-  if (!data) {
+  if (!racketsResponse.data) {
     return 'No rackets fetched';
   }
 
-  if (!data.length) {
-    return 'No rackets found';
-  }
+  const rackets = racketsResponse.data;
+  const brands = brandsResponse.data ?? [];
 
   return (
     <div>
-      <RacketGrid rackets={data} />
+      {brands.length > 0 && (
+        <BrandFilter brands={brands} selectedBrand={selectedBrand} />
+      )}
+      {rackets.length > 0 ? <RacketGrid rackets={rackets} /> : 'No rackets found'}
       <nav className={styles.paginateBlock} aria-label='Rackets pagination'>
         {pageNumber > 1 && (
-          <Link className={styles.paginateButton} href={getPageHref(pageNumber - 1)}>
+          <Link className={styles.paginateButton} href={getPageHref(pageNumber - 1, selectedBrand)}>
             Prev
           </Link>
         )}
         <span>{pageNumber}</span>
-        {data.length >= LIMIT && (
-          <Link className={styles.paginateButton} href={getPageHref(pageNumber + 1)}>
+        {rackets.length >= LIMIT && (
+          <Link className={styles.paginateButton} href={getPageHref(pageNumber + 1, selectedBrand)}>
             Next
           </Link>
         )}
