@@ -144,9 +144,17 @@ The static demo is built with mock data and deployed from `.github/workflows/dep
 npm run build:pages
 ```
 
-The exported site is written to `out/`. After pushing to `main` or `hw-7`, enable **GitHub Pages → Source: GitHub Actions** in the repository settings if it is not enabled yet.
+The exported site is written to `out/`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter.
+**One-time GitHub setup (required before the first deploy):**
+
+1. Open [repository Pages settings](https://github.com/kirillchistov/nextjs-20250606/settings/pages)
+2. Under **Build and deployment → Source**, choose **GitHub Actions**
+3. Push to `main` or `hw-7`, or re-run the failed workflow from the Actions tab
+
+If Pages is still set to **Deploy from a branch**, the deploy job fails with `HttpError: Not Found` because `actions/deploy-pages` has nowhere to publish.
+
+Live demo: https://kirillchistov.github.io/nextjs-20250606/
 
 ## Learn More
 
