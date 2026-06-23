@@ -1,7 +1,14 @@
-import { redirect } from 'next/navigation';
+'use client';
 
-const Page = () => {
-  redirect('/rackets');
-};
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default Page;
+export default function Page() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/rackets');
+  }, [router]);
+
+  return <p>Redirecting to rackets...</p>;
+}

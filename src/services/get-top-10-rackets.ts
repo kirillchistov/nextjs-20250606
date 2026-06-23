@@ -1,8 +1,14 @@
 import { IRacket, Response } from '../types/index';
 import { BASE_API_URL, TOP_10_REQUEST_TAG } from '../constants/api';
+import { isDemoMode } from '../constants/demo';
+import { getDemoTop10Rackets } from './demo-store';
 import { cookies } from 'next/headers';
 
 export const getTop10Rackets = async (): Promise<Response<IRacket[]>> => {
+  if (isDemoMode()) {
+    return { isError: false, data: getDemoTop10Rackets() };
+  }
+
   const cookieStore = await cookies();
 
   const result = await fetch(`${BASE_API_URL}/top-10`, {

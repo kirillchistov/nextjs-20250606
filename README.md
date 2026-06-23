@@ -52,6 +52,46 @@ home (/), product list (/rackets), product page (/racket/[racketId])
 * [x] Add font using next/font
 * [x] Add opengraph-image generation for the racket page
 
+## How it works
+
+The app is a Next.js storefront that reads product data from the [next-webinar-server](https://github.com/zubkov7/next-webinar-server) API during local development. Server Components fetch rackets, brands, and user session data on the server, while client providers handle favorites and navigation state.
+
+```mermaid
+flowchart TD
+  Browser[Browser] --> NextApp[Next.js App Router]
+  NextApp --> Layout[Root + App Layout]
+  Layout --> Header[Header / UserSection]
+  Layout --> Pages[Pages]
+
+  Pages --> Home[Home /]
+  Pages --> Rackets[/rackets]
+  Pages --> Racket[/racket/:id]
+  Pages --> Auth[Sign-in / Sign-up]
+
+  Home --> Services[Server services]
+  Rackets --> Services
+  Racket --> Services
+
+  Services -->|local dev| API[next-webinar-server :4000]
+  Services -->|GitHub Pages demo| DemoStore[Mock demo store]
+
+  API --> DB[(SQLite + Prisma)]
+  Auth --> API
+
+  Rackets --> BrandFilter[Brand filter]
+  Rackets --> Pagination[Pagination links]
+  Racket --> OG[opengraph-image]
+
+  Layout --> Favorites[FavoriteProvider + SWR]
+  Favorites --> Browser
+```
+
+In local mode, pages such as `/`, `/rackets`, and `/racket/[id]` call service functions that request `/api/products`, `/api/brands`, `/api/top-10`, and `/api/auth/*` on port `4000`. Cookies from sign-in are forwarded on racket requests so the UI can show favorite state. On `/rackets`, URL search params drive pagination and brand filtering; the server fetches the matching page of products and renders it with `BrandFilter`, `RacketGrid`, and prev/next links.
+
+The GitHub Pages demo uses the same UI with embedded mock data instead of the local API, so browsing, pagination, brand filtering, and product pages work without running the backend. Auth, favorites mutation, and API revalidation are disabled in that demo build.
+
+Live demo: https://kirillchistov.github.io/nextjs-20250606/
+
 ## Getting Started
 
 Pre-requisites:
@@ -76,7 +116,37 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Local backend
+
+The frontend expects the webinar API on port `4000`:
+
+```bash
+git clone https://github.com/zubkov7/next-webinar-server.git
+cd next-webinar-server
+npm install
+npx prisma db push
+npx prisma db seed
+npm run dev
+```
+
+Then, in this project:
+
+```bash
+npm install
+npm run dev
+```
+
+### GitHub Pages demo
+
+The static demo is built with mock data and deployed from `.github/workflows/deploy-pages.yml`.
+
+```bash
+npm run build:pages
+```
+
+The exported site is written to `out/`. After pushing to `main` or `hw-7`, enable **GitHub Pages → Source: GitHub Actions** in the repository settings if it is not enabled yet.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter.
 
 ## Learn More
 

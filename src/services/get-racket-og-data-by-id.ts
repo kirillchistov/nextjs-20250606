@@ -1,6 +1,8 @@
 
 import { BASE_API_URL } from '../constants/api';
+import { isDemoMode } from '../constants/demo';
 import { IRacket, Response } from '../types/index';
+import { getDemoRacketById } from './demo-store';
 
 type Params = {
   id: string;
@@ -9,6 +11,12 @@ type Params = {
 export const getRacketOgDataById = async ({
   id,
 }: Params): Promise<Response<IRacket>> => {
+  if (isDemoMode()) {
+    const data = getDemoRacketById(id);
+
+    return { isError: false, data };
+  }
+
   const result = await fetch(`${BASE_API_URL}/product/${id}`, {
     cache: 'force-cache',
   });

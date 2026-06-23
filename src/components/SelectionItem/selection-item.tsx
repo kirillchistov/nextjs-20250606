@@ -5,6 +5,7 @@ import { Link } from '../Link/link';
 import Image from 'next/image';
 import { IRacket } from '../../types/index';
 import { UserContext } from "../../providers/user";
+import { isDemoMode } from '../../constants/demo';
 import {
   useHydrateFavorite,
   useIsFavoriteById,
@@ -33,13 +34,17 @@ export const SelectionItem: FC<Props> = ({ racket }) => {
   return (
     <div className={styles.root}>
       {isFavorite && (
-        <Image
-          src='http://localhost:4000/bookmark.png'
-          width={32}
-          height={32}
-          alt='bookmark icon'
-          className={styles.favoriteIcon}
-        />
+        isDemoMode() ? (
+          <span className={styles.favoriteIcon} aria-label='bookmark icon'>★</span>
+        ) : (
+          <Image
+            src='http://localhost:4000/bookmark.png'
+            width={32}
+            height={32}
+            alt='bookmark icon'
+            className={styles.favoriteIcon}
+          />
+        )
       )}
 
       <Link href={`/racket/${id}`} >

@@ -1,5 +1,7 @@
 import { IRacket, Response } from '../types/index';
 import { BASE_API_URL } from '../constants/api';
+import { isDemoMode } from '../constants/demo';
+import { getDemoRackets } from './demo-store';
 import { cookies } from 'next/headers';
 
 interface Params {
@@ -13,6 +15,10 @@ export const getRackets = async ({
   limit = 4,
   brand,
 }: Params): Promise<Response<IRacket[]>> => {
+  if (isDemoMode()) {
+    return { isError: false, data: getDemoRackets({ page, limit, brand }) };
+  }
+
   const cookieStore = await cookies();
   const searchParams = new URLSearchParams({
     page: String(page),

@@ -1,9 +1,12 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { LIMIT } from './constants';
+import { isDemoMode } from '../../../constants/demo';
 import { getBrands } from '../../../services/get-brands';
 import { getRackets } from '../../../services/get-rackets';
 import BrandFilter from '../../../components/BrandFilter/filter';
+import RacketsPageClient from '../../../components/Rackets/rackets-page-client';
 import { RacketGrid } from '../../../components/RacketGrid/racket-grid';
 import styles from '../../../components/RacketGrid/racket-grid.module.css';
 
@@ -48,6 +51,14 @@ const getPageHref = (page: number, brand?: string) => {
 };
 
 const RacketsPage = async ({ searchParams }: Props) => {
+  if (isDemoMode()) {
+    return (
+      <Suspense fallback='Loading rackets...'>
+        <RacketsPageClient />
+      </Suspense>
+    );
+  }
+
   const { page, brand } = await searchParams;
   const pageNumber = getPageNumber(page);
   const selectedBrand = getSelectedBrand(brand);

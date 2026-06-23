@@ -1,9 +1,12 @@
 import { FC } from 'react';
 import { ImageResponse } from 'next/og';
+import { isDemoMode } from '../../../../constants/demo';
 import { getRacketOgDataById } from '../../../../services/get-racket-og-data-by-id';
+import { getDemoRacketIds } from '../../../../services/demo-store';
 import { IRacket } from '../../../../types/index';
 
 export const alt = 'Tennis racket preview';
+export const dynamic = 'force-static';
 export const size = {
   width: 1200,
   height: 630,
@@ -12,6 +15,14 @@ export const contentType = 'image/png';
 
 type Props = {
   params: Promise<{ racketId: string }>;
+};
+
+export const generateStaticParams = async () => {
+  if (!isDemoMode()) {
+    return [];
+  }
+
+  return getDemoRacketIds().map((racketId) => ({ racketId }));
 };
 
 const Image: FC<{
